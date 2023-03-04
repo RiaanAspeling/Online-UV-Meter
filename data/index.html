@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UVLux DASHBOARD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <h1><a href="./update">UVLux GAUGES</a></h1>
+    </div>
+    <div class="content">
+      <div class="card-grid">
+        <div class="card">
+          <p class="card-title">UV Index</p>
+          <canvas id="gauge-uvindex"></canvas>
+        </div>
+        <div class="card">
+          <p class="card-title">Lux</p>
+          <canvas id="gauge-lux"></canvas>
+        </div>
+        <div class="card">
+          <p class="card-title">W/m&#0178;</p>
+          <canvas id="gauge-wm2"></canvas>
+        </div>
+        <div class="card">
+          <p class="card-title">&#0176;C</p>
+          <canvas id="gauge-c"></canvas>
+        </div>
+        <div class="card">
+          <p class="card-title">Dew&#0176;C</p>
+          <canvas id="gauge-dewc"></canvas>
+        </div>
+        <div class="card">
+          <p class="card-title">Humidity %</p>
+          <canvas id="gauge-humidity"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
