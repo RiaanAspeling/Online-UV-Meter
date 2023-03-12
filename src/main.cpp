@@ -24,7 +24,7 @@ const int PIN_SWITCH_READ = 26;
 DHT dht(DHTPIN, DHTTYPE);
 
 #define uS_TO_S_FACTOR 1000000  /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  15 * 60  /* Time ESP32 will go to sleep (in seconds) */
+#define TIME_TO_SLEEP  30 * 60  /* Time ESP32 will go to sleep (in seconds) */
 
 #define JSON_CONFIG_FILE "/config.json"
 
@@ -53,7 +53,7 @@ float uvReading=0.0;
 float tempFReading=0.0;
 float dewTempFReading=0.0;
 float humidityReading=0.0;
-const float minLuxForSleep=5.0;
+const float minLuxForSleep=20.0;
 
 unsigned long lastReading = 0;
 const unsigned long timerReading = 5L * 1000L;
@@ -146,6 +146,11 @@ void sleepNow () {
 
 void connectWifi(bool forceConfig, bool sleepOnFail)
 {
+  if (forceConfig && sleepOnFail) {
+    Serial.println("### Forced config mode and sleep on fail? ###");
+    sleepNow();
+  }
+
   // Setup wifi and manager
   WiFi.mode(WIFI_STA);
   WiFiManager wm;
